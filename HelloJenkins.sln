@@ -7,6 +7,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloJenkinsCI", "HelloJenk
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloJenkinsCI.Test", "HelloJenkinsCI.Test\HelloJenkinsCI.Test.csproj", "{FEA61C98-65E4-45A7-A5D8-455594BEDE58}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dockerfile", "Dockerfile", "{9123BD67-1D21-46D9-AA81-18EE2912A304}"
+	ProjectSection(SolutionItems) = preProject
+		Dockerfile\Dockerfile = Dockerfile\Dockerfile
+		Dockerfile\Dockerfile2 = Dockerfile\Dockerfile2
+		Dockerfile\Dockerfile4HelloCI = Dockerfile\Dockerfile4HelloCI
+		Dockerfile\DockerfileDotNet8Jenkins = Dockerfile\DockerfileDotNet8Jenkins
+		Dockerfile\jenkins.yaml = Dockerfile\jenkins.yaml
+		Dockerfile\jobs.groovy = Dockerfile\jobs.groovy
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

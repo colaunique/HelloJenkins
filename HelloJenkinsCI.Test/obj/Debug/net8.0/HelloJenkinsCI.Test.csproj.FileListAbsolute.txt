@@ -97,3 +97,4 @@ D:\Git\colaunique\HelloJenkins\HelloJenkinsCI.Test\obj\Debug\net8.0\refint\Hello
 D:\Git\colaunique\HelloJenkins\HelloJenkinsCI.Test\obj\Debug\net8.0\HelloJenkinsCI.Test.pdb
 D:\Git\colaunique\HelloJenkins\HelloJenkinsCI.Test\obj\Debug\net8.0\HelloJenkinsCI.Test.genruntimeconfig.cache
 D:\Git\colaunique\HelloJenkins\HelloJenkinsCI.Test\obj\Debug\net8.0\ref\HelloJenkinsCI.Test.dll
+D:\Git\colaunique\HelloJenkins\HelloJenkinsCI.Test\obj\Debug\net8.0\HelloJenkinsCI.Test.sourcelink.json

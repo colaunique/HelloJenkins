@@ -5,7 +5,7 @@ namespace HelloJenkins.Test
         [Fact]
         public void Test1()
         {
-
+            //throw new Exception("error");
         }
     }
 }

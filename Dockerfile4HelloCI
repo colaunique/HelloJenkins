@@ -1,0 +1,38 @@
+# Stage 1: 测试阶段
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS test
+WORKDIR /app
+
+# 拷贝测试代码到工作目录
+COPY ./HelloJenkinsCI.Test ./
+
+# 运行测试
+RUN dotnet test HelloJenkinsCI.Test.csproj
+
+# 创建一个标志文件，指示测试是否通过
+RUN echo "tests_passed=true" > tests_status
+
+# Stage 2: 构建阶段
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /app
+
+# 从测试阶段复制测试结果
+COPY --from=test /app/tests_status /app/
+
+# 检查测试是否通过
+RUN cat tests_status | grep "tests_passed=true"
+
+# 复制主应用程序代码到工作目录
+COPY ./HelloJenkinsCI ./
+
+# 构建应用程序
+RUN dotnet publish -c Release -o out
+
+# Stage 3: 发布阶段
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
+WORKDIR /app
+
+# 从构建阶段拷贝构建结果到运行时镜像
+COPY --from=build /app/out ./
+
+# 设置应用程序启动命令
+ENTRYPOINT ["dotnet", "HelloJenkinsCI.dll"]
